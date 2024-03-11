@@ -39,7 +39,8 @@
    margin-left: 16px;
 }
 
-#navbar ul li a::after {
+#navbar ul li a::after,
+#navbar ul li button::after {
    content: '';
    position: absolute;
    left: 0px;
@@ -52,14 +53,34 @@
    transform: scaleX(0);
 }
 
-#navbar ul a:hover::after {
+#navbar ul a:hover::after,
+#navbar ul button:hover::after {
    transform-origin: bottom left;
    transform: scaleX(1);
 }
 
-#navbar a:hover {
-   color: cyan;
+#navbar a:hover,
+#navbar button:hover,
+#dropdown-item:hover {
+   color: cyan!important;
    transition: 0.5s;
+}
+
+#dropdown,#dropdown-item{
+   background: transparent!important;
+}
+
+.dropdown-arrow{
+   display: inline-block;
+   transform: rotate(-90deg);
+}
+
+#navbar li button {
+   border: none;
+   background-color: transparent;
+   padding-top: 11px;
+   padding-left: 10px;
+   padding-right: 10px;
 }
 
 #icon {
@@ -101,7 +122,6 @@
 .hero-section-buttons>a:hover {
    transition: 0.5s;
    background-color: transparent;
-   color: var(--red-color);
    border: 2px solid var(--red-color);
 }
 
